@@ -4,9 +4,18 @@
 
 ## Description
 
-Technical knowledge test for the position of FullStack Developer Senior.
+Technical knowledge test for the position of FullStack Developer Senior. It is very important to have Docker in the team and, in turn, the FrontEnd project at the same level as the BackEnd. 
 
-## Installation
+## Docker Installation
+
+Put the docker-compose.yml file at the same level as the back and front projects.
+
+```bash
+$ docker-compose up -d
+$ http://localhost:8080/
+```
+
+## Manual Installation
 
 ```bash
 $ npm install
@@ -15,7 +24,7 @@ $ npm install
 ## Running the app
 
 ```bash
-# create file .env
+# validate file .env
 API=YayDooLocal
 HOST=localhost
 PORT=9090

@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:8.0.28
+    container_name: yaydoo-db
+    environment:
+      MYSQL_DATABASE: "yaydoo_db"
+      MYSQL_USER: "root"
+      MYSQL_ROOT_PASSWORD: "12345"
+    ports:
+      - "3306:3306"
+    networks:
+      - yaydoo-net
+  back:
+    container_name: yaydoo-back
+    build: ./yaydoo_examen_backend
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "9010:9090"
+    networks:
+      - yaydoo-net
+  web:
+    container_name: yaydoo-front
+    build: yaydoo_examen_frontend
+    restart: always
+    depends_on:
+      - back
+    ports:
+      - "8080:80"
+    networks:
+      - yaydoo-net
+networks:
+  yaydoo-net:

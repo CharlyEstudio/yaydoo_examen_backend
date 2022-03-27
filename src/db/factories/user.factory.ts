@@ -1,0 +1,19 @@
+import { define, factory } from 'typeorm-seeding';
+import * as Faker from 'faker';
+
+// Entities
+import { User } from '../../core/users/entities/user.entity';
+import { Person } from '../../core/person/entities/person.entity';
+
+define(User, (faker: typeof Faker) => {
+  const gender = faker.random.number(1);
+  const firstName = faker.name.firstName(gender);
+  const lastName = faker.name.lastName(gender);
+
+  const user = new User();
+  user.name = `${firstName} ${lastName}`;
+  user.password = faker.random.word();
+  user.email = faker.internet.email(user.name);
+  user.person = factory(Person)() as any;
+  return user;
+});

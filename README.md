@@ -8,7 +8,9 @@ Technical knowledge test for the position of FullStack Developer Senior. It is v
 
 ## Docker Installation
 
-Put the docker-compose.yml file at the same level as the back and front projects.
+Put the docker-compose.yml file at the same level as the back and front projects. Install [Docker](https://www.docker.com/get-started/).
+
+The waiting time for the process to finish is between 2 and 5 minutes, this is because it starts the MySQL service and the BackEnd tries to execute the startup commands.
 
 ```bash
 $ docker-compose up -d

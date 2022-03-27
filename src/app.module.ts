@@ -10,6 +10,8 @@ import { EnvironmentsKeys } from './globals/environments-keys';
 import { DatabaseModule } from './db/database.module';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
+
+// Controllers
 import { HealthController } from './health/health.controller';
 
 @Module({

@@ -17,7 +17,7 @@ export const databaseProvider = [
         trace: true,
         logging: config.getEnv(EnvironmentsKeys.TYPEORM_LOGGING) === 'true',
         type: config.getEnv(EnvironmentsKeys.TYPEORM_CONNECTION),
-        host: config.getEnv(EnvironmentsKeys.HOST),
+        host: config.getEnv(EnvironmentsKeys.DATABASE_HOST),
         port: Number(config.getEnv(EnvironmentsKeys.DATABASE_PORT)),
         database: config.getEnv(EnvironmentsKeys.DATABASE_NAME),
         username: config.getEnv(EnvironmentsKeys.DATABASE_USER),

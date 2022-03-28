@@ -4,7 +4,7 @@ import { IsNotEmpty, IsString } from 'class-validator';
 // DTO's
 import { CreatePersonDto } from '../../person/dto/create-person.dto';
 
-export class CreateUserDto {
+export class FindUserDto {
   @ApiProperty()
   idUser: number;
 
@@ -17,8 +17,6 @@ export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
   email: string;
-
-  password: string;
 
   @ApiProperty()
   @IsNotEmpty()

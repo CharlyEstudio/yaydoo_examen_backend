@@ -4,30 +4,7 @@
 
 ## Description
 
-Technical knowledge test for the position of FullStack Developer Senior. It is very important to have Docker in the team and, in turn, the FrontEnd project at the same level as the BackEnd. 
-
-## Docker Installation
-
-Place the following files at the same level as the projects before and after. Install [Docker](https://www.docker.com/get-started/).
-
-- docker-compose.yml
-- haproxy.cfg
-
-The waiting time for the process to finish is between 2 and 5 minutes, this is because it starts the MySQL service and the BackEnd tries to execute the startup commands.
-
-```bash
-$ docker-compose up -d
-$ http://localhost:8080/
-```
-
-### Seeds
-
-Open CMD/Terminal and run command next.
-It can be set to be automatic, but in this example it only needs to be one time.
-
-```bash
-$ docker exec yaydoo-back npm run seed:run
-```
+Technical knowledge test for the position of FullStack Developer Senior. It is very important to have Docker in the team and, in turn, the FrontEnd project at the same level as the BackEnd.
 
 ## Manual Installation
 
@@ -37,8 +14,12 @@ $ npm install
 
 ### Running the app
 
+#### Create file .env
+
+Create the .env file at the root level of this project folder.
+
 ```bash
-# validate file .env
+# Global
 API=YayDooLocal
 HOST=localhost
 PORT=9090
@@ -77,15 +58,16 @@ BYCRYPT_HASH=scret-hash
 ```
 
 ```bash
-# create database at mysql 8.0.28 in the port 3306
-$ create database yaydoo_db
+# create database at mysql 8.0.28 in the port 3306, with the same password as
+# in the DATABASE_USER environment file. 
+$ create database yaydoo_db;
 
 # generate and run migrations
 $ npm run mg:r
 
 # generate users fake with seeds (100)
-$ npm run seed:config
 $ npm run seed:run
+# use any user to access, use the email field and the password is 12345.
 
 # create scripts file
 $ npm run build

@@ -8,6 +8,6 @@ define(Person, (faker: typeof Faker) => {
   const person = new Person();
   person.telephone = faker.phone.phoneNumber();
   person.address = faker.random.word();
-  person.birthDay = faker.date.past(2);
+  person.birthDay = faker.date.past(10);
   return person;
 });

@@ -1,5 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
+// BCrypt JS
+import * as bcrypt from 'bcryptjs';
+
 // DTO's
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -24,6 +27,11 @@ export class UsersService {
       throw new Error('No se pudo crear la persona del usuario');
     }
 
+    const salt = await bcrypt.genSaltSync(7);
+    createUserDto.password = await bcrypt.hashSync(
+      createUserDto.password,
+      salt,
+    );
     createUserDto.person = person;
     return this.userRepository.save(createUserDto);
   }

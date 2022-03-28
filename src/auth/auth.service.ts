@@ -1,5 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
+// BCrypt JS
+import * as bcrypt from 'bcryptjs';
+
 // DTO's
 import { CreateUserDto } from '../core/users/dto/create-user.dto';
 
@@ -17,7 +20,9 @@ export class AuthService {
   async validateUser(email: string, pass: string): Promise<any> {
     const user: CreateUserDto = await this.usersService.findByUsername(email);
 
-    if (user && user.password === pass) {
+    const validPassword = await bcrypt.compare(pass, user.password);
+
+    if (user && validPassword) {
       const { password, ...result } = user;
       return result;
     }

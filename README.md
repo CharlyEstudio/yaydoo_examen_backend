@@ -83,7 +83,7 @@ $ create database yaydoo_db
 # generate and run migrations
 $ npm run mg:r
 
-# generate users fake with seeds
+# generate users fake with seeds (100)
 $ npm run seed:config
 $ npm run seed:run
 
@@ -93,6 +93,16 @@ $ npm run build
 # production mode
 $ npm run start:prod
 ```
+
+## Answers
+
+### Algorithms
+
+The algorithm test was carried out in the file [yaydoo_examen_algoritmos_CARLOS_RAMIREZS](yaydoo_examen_algoritmos_CARLOS_RAMIREZ.js) that is in this project.
+
+### Design patterns
+
+La prueba de patrones de diseño se realizó en el archivo [patrones_diseno.md](patrones_diseno.md) que se encuentra en este proyecto.
 
 ## Stay in touch
 
